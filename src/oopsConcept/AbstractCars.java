@@ -2,15 +2,25 @@ package oopsConcept;
 
 public abstract class AbstractCars {
 	
-	int speed;
+	int speedLimit=100;
+	
+	private int privateSpeed;
+	public int publicSpeed;
+	protected int protectedSpeed;
+	
+	public AbstractCars() {
+		this(0);
+	}
 	
 	public AbstractCars(int StartSpeed) {
-		speed = StartSpeed;
+		this.privateSpeed=StartSpeed;
 	}
 	
-	public void IncreaseSpeed() {
-		speed++;
-		System.out.println("Increase speed of Car Class");
+	public void SetPrivateSpeed(int pSpeed) {
+		this.privateSpeed=pSpeed;
 	}
+	
+	public abstract void engineStart(String KeyType,int Cylinders);
+	
 
 }
